@@ -48,8 +48,17 @@ client.on('message', async message => {
         client.commands.get('lectura').execute(message, args)
 
     }
-    else if (command == 'alain') {
-        message.channel.send('https://www.youtube.com/watch?v=YihmpQdTj54')
+    else if (command == 'clear') {
+        client.commands.get('clear').execute(message, args)
+
+    }
+    else if (command == 'play') {
+        client.commands.get('play').execute(message, args)
+
+    }
+    else if (command == 'leave') {
+        client.commands.get('leave').execute(message, args)
+
     }
 
 
