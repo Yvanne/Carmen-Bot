@@ -8,6 +8,8 @@ const prefix = '$';
 
 const fs = require('fs');
 
+const querystring = require('querystring'); //urban dictionary
+
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -22,7 +24,7 @@ client.once('ready', ()=>{
     console.log('testing is alive')
 })
 
-client.on('message', message => {
+client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) {
         return;
     }
@@ -37,6 +39,14 @@ client.on('message', message => {
     else if (command == 'marco') {
         client.commands.get('marco').execute(message, args)
 
+    } 
+    else if (command == 'urban' || command =='ud') {
+        client.commands.get('urbandict').execute(message, args)
+
+    } 
+    else if (command == 'read' || 'reading' || 'lectura') {
+        client.commands.get('lectura').execute(message, args)
+
     }
     else if (command == 'alain') {
         message.channel.send('https://www.youtube.com/watch?v=YihmpQdTj54')
@@ -44,6 +54,10 @@ client.on('message', message => {
 
 
 })
+
+
+
+
 
 
 
