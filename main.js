@@ -34,6 +34,10 @@ client.on('message', message => {
     if (command === 'oui') {
         client.commands.get('oui').execute(message, args)
     }
+    else if (command == 'marco') {
+        client.commands.get('marco').execute(message, args)
+
+    }
     else if (command == 'alain') {
         message.channel.send('https://www.youtube.com/watch?v=YihmpQdTj54')
     }
