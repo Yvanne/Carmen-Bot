@@ -59,6 +59,9 @@ client.on('message', async message => {
     else if (command == 'leave') {
         client.commands.get('leave').execute(message, args)
 
+    } 
+    else if (command == 'ly') {
+        
     }
 
 
@@ -71,4 +74,5 @@ client.on('message', async message => {
 
 
 // GIVING ACCESS TO THE BOT
-client.login('ODA3ODM5MTI0NDA0MzA2MDAx.YB900A.t0BZ_oRjR2cDMJsfOg3bBf_44x4')
+//client.login('ODA3ODM5MTI0NDA0MzA2MDAx.YB900A.t0BZ_oRjR2cDMJsfOg3bBf_44x4')
+client.login(process.env.DISCORD_BOT_TOKEN);
